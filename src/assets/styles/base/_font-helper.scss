@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "../utilities/variables" as *;
+
+@font-face {
+    font-family: ArgentumSans;
+    src: url("../fonts/argentum-sans/ArgentumSans-Light.ttf");
+}
+@font-face {
+    font-family: ArgentumSans;
+    src: url("../fonts/argentum-sans/ArgentumSans-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: ArgentumSans;
+    src: url("../fonts/argentum-sans/ArgentumSans-ExtraBold.ttf");
+    font-weight: 900;
+}
+
+.title-mobile{
+    font-weight: 800;
+    font-size: 24px;
+    color: map.get($theme-colors, "grey-900")
+}

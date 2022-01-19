@@ -1,0 +1,62 @@
+
+$border-color: #1bbeff;
+$text-color: #898989;
+$text-color-focus: #363636;
+$border: #bbbbbb;
+$padding: 16px 24px;
+$line-height: 24px;
+
+.input-group {
+  margin-top: 15px;
+  width: 100%;
+  position: relative;
+  border: 3px solid $border;
+  border-radius: 8px;
+  &:hover,
+  &:focus-within {
+    border-color: $border-color;
+  }
+
+  input:focus,
+  &:hover input {
+    color: $border-color;
+  }
+  input {
+    padding: $padding;
+    border-width:0px;
+    border:none;
+    background-color: transparent;
+    width: 90%;
+    color: $text-color-focus;
+    font-size: 16px;
+    line-height: $line-height;
+    outline:none;
+  }
+
+  label {
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    background-color: transparent;
+    padding: $padding;
+    line-height: $line-height;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    color: $text-color;
+    cursor: text;
+  }
+
+  &:hover label {
+    color: $border-color;
+  }
+
+  &:focus-within label,
+  & input:not(:placeholder-shown) ~ label {
+    background-color: white;
+    padding: 0px 8px;
+    top: -12px;
+    left: 16px;
+    bottom: auto;
+    color: $text-color-focus;
+  }
+}

@@ -1,0 +1,38 @@
+// TODO: Hacer el modal responsive
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal {
+    background: #FFFFFF;
+    @extend .shadow-md;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    width: 526px;
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  
+  .modal-body {
+    position: relative;
+  }
+
+  .modal-fade-enter,
+  .modal-fade-leave-to {
+    opacity: 0;
+  }
+
+  .modal-fade-enter-active,
+  .modal-fade-leave-active {
+    transition: opacity .5s ease;
+  }

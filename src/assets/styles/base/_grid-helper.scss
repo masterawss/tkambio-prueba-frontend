@@ -1,0 +1,8 @@
+.grid{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 0px 20px;
+}
+.col-span-2{
+    grid-column: 1 / span 2;
+}

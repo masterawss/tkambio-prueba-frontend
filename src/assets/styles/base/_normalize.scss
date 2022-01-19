@@ -1,0 +1,9 @@
+@use "sass:map";
+@use "../utilities/variables" as *;
+*{
+    margin: 0px;
+    font-family: ArgentumSans;
+}
+body{
+    color: map.get($theme-colors, "grey-700")
+}
