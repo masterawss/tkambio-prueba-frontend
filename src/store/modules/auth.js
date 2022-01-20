@@ -22,7 +22,7 @@ export default {
             })
             .then(response => response.data)
             .then(response => {
-                console.log(response);
+                // console.log(response);
                 if(response.status == 1){
                     localStorage.setItem('access_token', response.access_token)
                     router.push({name: 'home'})
@@ -50,12 +50,12 @@ export default {
             try {
                 let response = await axiosInstance.get('api/user-profile')
                 response = response.data
-                console.log('ESTADO DEL USUARIO', response);
+                // console.log('ESTADO DEL USUARIO', response);
                 if(response.status == 1){
                     commit('setAuthenticated', true)
                 }
             } catch (error) {
-                console.log('ERROR', error.response);
+                // console.log('ERROR', error.response);
                 commit('setAuthenticated', false)
             }
             commit('ui/setLoading',false, { root: true })

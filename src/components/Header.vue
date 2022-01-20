@@ -1,7 +1,7 @@
 <template>
     <div class="navbar">
         <div></div>
-        <div style="position: fixed; width: 100%; text-align:center" >
+        <div class="brand-header" >
             <img  src="../assets/logo.svg" alt="">
         </div>
         <div v-show="$store.state.auth.isAuthenticated" style="text-align: right; " class="mr-20">
@@ -26,7 +26,7 @@ export default ({
     },
 })
 </script>
-<style>
+<style lang="scss">
     .navbar{
         display: flex;
         flex-direction: row;
@@ -42,5 +42,14 @@ export default ({
 
         background: linear-gradient(180deg, #02ADF1 -2.37%, #4562E6 124.84%, #4563E6 124.84%);
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    }
+    .brand-header{
+        position: fixed; 
+        width: 100%; 
+        text-align:center;
+        @media (max-width:769px){
+            text-align:left;
+        }
     }
 </style>
