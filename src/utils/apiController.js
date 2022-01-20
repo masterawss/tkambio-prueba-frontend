@@ -1,6 +1,5 @@
-import axios from 'axios';
-const BASE_URL = "http://tkambio-prueba.test/api"
+import {BASE_URL} from './axios'
 
 export const getReport = (id) => {
-  window.open(`${BASE_URL}/get-report/${id}`)
+  window.open(`${BASE_URL}/api/get-report/${id}`)
 }

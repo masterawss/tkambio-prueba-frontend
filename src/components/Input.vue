@@ -21,6 +21,10 @@ export default {
             type: String,
             required: true
         },
+        modelValue: {
+            type: String,
+            required: true
+        }
     },
     setup() {
         const input = ref("");
@@ -36,7 +40,7 @@ export default {
             :name="nameInput" 
             :id="id" 
             placeholder=" " 
-            v-model="input"
+            :value="modelValue" 
             @input="$emit('update:modelValue', $event.target.value)" />
         <label :for="id">{{label}}</label>
     </div>

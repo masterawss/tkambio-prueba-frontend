@@ -1,12 +1,28 @@
 <template>
     <div class="navbar">
-        <img src="../assets/logo.svg" alt="">
+        <div></div>
+        <div style="position: fixed; width: 100%; text-align:center" >
+            <img  src="../assets/logo.svg" alt="">
+        </div>
+        <div v-show="$store.state.auth.isAuthenticated" style="text-align: right; " class="mr-20">
+            <Btn @click="handleSignOut">Cerrar sesión</Btn>
+        </div>
     </div>
 </template>
 <script>
+import { useStore } from 'vuex'
+import Btn from "./Btn.vue";
 export default ({
+    components: {Btn},
     setup() {
-        
+        const store = useStore()
+        const handleSignOut = () => {
+            store.dispatch('auth/signOut')
+        }
+
+        return {
+            handleSignOut
+        }
     },
 })
 </script>
@@ -14,7 +30,7 @@ export default ({
     .navbar{
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content:space-between;
         align-items: center;
         padding-top: 20px ;
         padding-bottom: 20px ;

@@ -9,7 +9,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="item in $store.state.items" :key="item.interface_id" style="padding:10px">
+                <tr v-for="item in $store.state.reports.items" :key="item.interface_id" style="padding:10px">
                     <td >{{item.title}} </td>
                     <td class="border-vertical text-center">{{item.created_at}} </td>
                     <td class="border-vertical text-right">
@@ -36,7 +36,7 @@ export default ({
         const store = useStore()
 
         onMounted(() => {
-            store.dispatch('getListFromApi')
+            store.dispatch('reports/getListFromApi')
         })
         
         return {

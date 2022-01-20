@@ -11,20 +11,22 @@ export default ({
 </script>
 
 <template>
-  <h1 class="text-center mt-50 mb-75">
-    Generador de reportes TK
-  </h1>
-  
-  <TableReports />
+  <div class="container">
+    <h1 class="text-center mt-50 mb-75">
+      Generador de reportes TK
+    </h1>
+    
+    <TableReports />
 
-  <div class="text-center mt-30 mb-30">
-    <Btn @click="() => $store.commit('setModelState', true)">
-      Crear reporte
-    </Btn>
+    <div class="text-center mt-30 mb-30">
+      <Btn @click="() => $store.commit('ui/setModelState', true)">
+        Crear reporte
+      </Btn>
+    </div>
+    
+    <ReportGeneratorModal 
+      v-show="$store.state.ui.modalOpened" />
   </div>
-  
-  <ReportGeneratorModal 
-    v-show="$store.state.modalOpened" />
   
 </template>
 

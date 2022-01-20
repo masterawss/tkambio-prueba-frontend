@@ -23,12 +23,11 @@ import Loader from '../../../components/Loader.vue';
       const form = reactive({...initialState})
 
       const handleSubmit = (e) => {
-        store.dispatch('generateReports', form)
+        store.dispatch('reports/generateReports', form)
         Object.assign(form, initialState);
       }
 
       const canGenerate = computed(() => 
-        // TODO: Mejorar la validación
         form.descripcion.length 
         && form.fecha_nacimiento_inicio.length 
         && form.fecha_nacimiento_fin.length
@@ -51,7 +50,7 @@ import Loader from '../../../components/Loader.vue';
           <form @submit.prevent="handleSubmit">
             <slot name="body">
               <div class=" text-right">
-                <Btn variant="link" @click="() => $store.commit('setModelState', false)">
+                <Btn variant="link" @click="() => $store.commit('ui/setModelState', false)">
                   ❌
                 </Btn>
               </div>
@@ -75,9 +74,9 @@ import Loader from '../../../components/Loader.vue';
               <Input required v-model="form.fecha_nacimiento_fin" type="date" label="Fin" id="input-3" />
             </div>
             <footer class="modal-footer text-center mt-20 mb-20">
-              <Loader v-show="$store.state.loading" />
+              <Loader v-show="$store.state.ui.loading" />
               <br>
-              <Btn :loading="$store.state.loading" :disabled="!canGenerate || $store.state.loading" type="submit" aria-label="Close modal">
+              <Btn :loading="$store.state.ui.loading" :disabled="!canGenerate || $store.state.ui.loading" type="submit" aria-label="Close modal">
                 Generar reporte 
               </Btn>
             </footer>
