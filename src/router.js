@@ -4,6 +4,7 @@ import {
 } from 'vue-router'
 import Home from './pages/Home/Index.vue'
 import Login from './pages/Auth/Login.vue'
+import NotFound from './pages/NotFound.vue'
 import store from './store/index'
 const router = createRouter({
     history: createWebHistory(),
@@ -23,18 +24,20 @@ const router = createRouter({
                 requiresAuth: false
             }
         },
+        {
+            path: "/:catchAll(.*)",
+            name: 'not_found',
+            component: NotFound,
+            meta: {
+                requiresAuth: false
+            }
+        },
     ]
 })
 
 router.beforeEach((to, from, next) => {
     const authUser = store.state.auth.isAuthenticated;
     const reqAuth = to.matched.some((record) => record.meta.requiresAuth);
-    const loginQuery = {
-        path: "/login",
-        query: {
-            redirect: to.fullPath
-        }
-    };
     
     if (to.name == 'login') {
         store.dispatch("auth/getUserStatus").finally(() => {
