@@ -1,15 +1,15 @@
 import {
     createRouter,
-    createWebHistory
+    createWebHashHistory
 } from 'vue-router'
 import Home from './pages/Home/Index.vue'
 import Login from './pages/Auth/Login.vue'
 import NotFound from './pages/NotFound.vue'
 import store from './store/index'
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes: [{
-            path: '/tkambio-prueba-frontend',
+            path: '',
             name: 'home',
             component: Home,
             meta: {
@@ -17,14 +17,14 @@ const router = createRouter({
             }
         },
         {
-            path: '/tkambio-prueba-frontend/login',
+            path: '/login',
             name: 'login',
             component: Login,
             meta: {
                 requiresAuth: false
             }
         },
-        
+
         {
             path: "/:catchAll(.*)",
             name: 'not_found',

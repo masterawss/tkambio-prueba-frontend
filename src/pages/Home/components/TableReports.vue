@@ -4,7 +4,7 @@
             <thead>
                 <tr>
                     <th>Título</th>
-                    <th>Fecha de creación</th>
+                    <th>Fecha de creación </th>
                     <th>Acción</th>
                 </tr>
             </thead>
