@@ -9,7 +9,7 @@ import store from './store/index'
 const router = createRouter({
     history: createWebHistory(),
     routes: [{
-            path: '/',
+            path: '/tkambio-prueba-frontend',
             name: 'home',
             component: Home,
             meta: {
@@ -17,13 +17,14 @@ const router = createRouter({
             }
         },
         {
-            path: '/login',
+            path: '/tkambio-prueba-frontend/login',
             name: 'login',
             component: Login,
             meta: {
                 requiresAuth: false
             }
         },
+        
         {
             path: "/:catchAll(.*)",
             name: 'not_found',

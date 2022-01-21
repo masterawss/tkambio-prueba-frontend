@@ -4,14 +4,13 @@
             <thead>
                 <tr>
                     <th>Título</th>
-                    <th>Fecha de creación </th>
+                    <th>Fecha de creación</th>
                     <th>Acción</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="item in $store.state.reports.items" :key="item.interface_id" style="padding:10px">
                     <td >{{item.title}} </td>
-                    
                     <td class="border-vertical text-center">{{item.created_at}} </td>
                     <td class="border-vertical text-right">
                         <Btn type="link" variant="link" @click="getReport(item.interface_id)">
